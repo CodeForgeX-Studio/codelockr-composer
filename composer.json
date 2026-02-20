@@ -1,0 +1,20 @@
+{
+    "name": "codelockr/runtime",
+    "type": "library",
+    "description": "CodeLockr PHP runtime for encrypted scripts.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CodeForgeX Studio",
+            "email": "hello@codeforgex.studio"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "autoload": {
+        "files": [
+            "codelockr-loader.php"
+        ]
+    }
+}
