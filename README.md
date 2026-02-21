@@ -12,24 +12,6 @@ composer require codelockr/runtime
 
 Encrypted `.clr.php` files are **never** sent directly to users or exposed as publicly accessible files on the web server. Instead, use a `router.php` as the single entry point, with an `.htaccess` that forwards all traffic to it.
 
-### Directory Structure
-
-```
-public/              ← Web root (only this is publicly accessible)
-├── .htaccess        ← Forwards all requests to router.php
-├── router.php       ← The only public PHP file
-└── index.php        ← Optional: alias to router
-
-app/                 ← Outside web root (or protected via .htaccess)
-├── vendor/
-│   └── codelockr/runtime/
-├── modules/
-│   ├── dashboard.clr.php
-│   ├── api.clr.php
-│   └── auth.clr.php
-└── composer.json
-```
-
 > **Important:** Place `.clr.php` files **outside** the web root or block direct access via `.htaccess`. They are only loaded through `router.php`.
 
 ### 1. `.htaccess` — Forward all requests to router.php
@@ -61,8 +43,6 @@ This is the only public PHP file. It handles all incoming requests and loads the
 
 ```php
 <?php
-require_once __DIR__ . '/../app/vendor/autoload.php';
-
 // Get the requested path
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $requestUri = rtrim($requestUri, '/') ?: '/';
