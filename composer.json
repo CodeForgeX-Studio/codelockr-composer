@@ -1,14 +1,20 @@
 {
     "name": "codelockr/runtime",
-    "type": "library",
     "description": "CodeLockr PHP runtime for encrypted scripts.",
+    "type": "library",
     "license": "MIT",
+    "homepage": "https://codeforgex.studio",
     "authors": [
         {
             "name": "CodeForgeX Studio",
-            "email": "hello@codeforgex.studio"
+            "email": "hello@codeforgex.studio",
+            "homepage": "https://codeforgex.studio"
         }
     ],
+    "support": {
+        "issues": "https://github.com/CodeForgeX-Studio/codelockr-composer/issues",
+        "source": "https://github.com/CodeForgeX-Studio/codelockr-composer"
+    },
     "require": {
         "php": "^7.4|^8.0"
     },
